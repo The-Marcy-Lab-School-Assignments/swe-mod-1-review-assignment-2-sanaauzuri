@@ -88,9 +88,19 @@ console.log(upperCaseLetters);
 
 ### Response 3
 
-Your response...
+Why the error occurs:
 
----
+
+This error occurs because the `.map()` doesn't receive a callback function. `capitalize()` is called with no argument, so `str` is `undefined` and the function returns `undefined`. `.map()` gets undefined where it expects a callback function.  So when it tries to call it on each element, it throws an error because the callback function is placed where the element being processed in the array method should be.
+
+
+Fix:
+
+Remove empty parentheses so the function itself is passed, not called immediately.
+
+To avoid in the future:
+
+You can avoid this error by either storing the callback function inside the array method instead of a variable or not including parentheses when passing a function as a callback in an array method.
 
 ## Prompt 4
 
@@ -117,4 +127,12 @@ const grandTotal = orders.reduce((sum, order) => {
 
 ### Response 4
 
-Your response...
+- Part A: The grand total will equal 135 after this code runs.
+- Part B: The 0 at the end of the `reduce method` sets the initial value for the callback function. Without an initial value, the sum would start at the first element of the array. The `initial value` prevents this by giving the `accumulator` a correct starting point.
+- Part C: Walk through what happens in the FIRST iteration of reduce:
+   - The value of sum is 0 (the `initial value`)
+   - The value of order is `{ id: 1, total: 45 }`, the first object in the array
+   - The sum, which is 0, added onto the value of `order.total` for the first iteration gets returned. For example:
+   `Iteration 1:` 0 + 45 is returned, so sum becomes 45 going into the next iteration
+
+
