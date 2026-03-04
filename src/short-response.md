@@ -25,15 +25,19 @@ Part A: What will be logged to the console? Why?
 Part B: How would you modify the code so that reassigning `playlist2.songCount` does NOT affect `playlist1`.songCount? Write the corrected code below your response (we've provided the broken code again for you to fix).
 
 ### Response 1
+`A)`  What will be logged to the console:
+```javascript
+{ name: "My Favorites", songCount: 15 };
+```
+Explanation: This is logged to the console because both variables point to the same object, so mutating the object through one variable means that mutation is reflected through the other variable too.
 
-Your response...
+`B)` I would modify the code by using spread syntax to create a copy of the original object, so that reassigning `playlist2.songCount` does NOT affect `playlist1`.songCount
 
 **Corrected Code:**
-
 ```js
 // fix this!
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = { ...playlist1 };
 playlist2.songCount = 15;
 console.log(playlist1.songCount);
 ```
@@ -60,9 +64,11 @@ For each task below, identify which array method (forEach, filter, map, find, or
 
 ### Response 2
 
-Your response...
+1. Array method: `Array.filter()`.
+2. Array method: `Array.find()`.
+3. Array method: `Array.reduce()`.
+4. Array method: `Array.map()`.
 
----
 
 ## Prompt 3
 
