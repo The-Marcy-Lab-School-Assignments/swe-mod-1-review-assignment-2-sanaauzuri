@@ -17,10 +17,10 @@ const availableTitles = availableBooks.map(availableTitles => availableTitles.ti
 
 // C: Chain filter and map together in a single expression to get the titles of all books with more than 50 checkouts. Store this in a variable called `popularBookTitles`.
 const popularBookTitles = books.filter((book) => book.checkouts > 50).map((book) => book.title);
-
+// console.log(popularBookTitles)
 // D: Use reduce to calculate the total number of checkouts across ALL books. Store this in a variable called `totalCheckouts`.
 const totalCheckouts = books.reduce((total, currBook) => total + currBook.checkouts, 0);
-
+console.log(totalCheckouts)
 // E: Use reduce to find the highest number of checkouts any single book has received. Store this in a variable called `mostCheckouts`.
 // Hint: Start with 0 and compare each book's checkouts to your accumulator. If the book's checkouts are higher, return that number; otherwise, return the current accumulator.
 const mostCheckouts = books.reduce((max, currBook) => {
